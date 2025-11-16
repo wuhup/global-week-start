@@ -1,0 +1,9 @@
+{
+  "id": "global-week-start",
+  "name": "Global Week Start",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Choose the first day of the week and force Moment.js to respect it across the vault.",
+  "author": "Christopher Jones",
+  "isDesktopOnly": false
+}
