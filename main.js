@@ -58,7 +58,6 @@ class GlobalWeekStartPlugin extends Plugin {
     initializeMomentIntegration() {
         const moment = window.moment;
         if (!moment) {
-            console.warn("[Global Week Start] Moment.js not available yet.");
             return;
         }
         this.patchMomentUpdateLocale(moment);
@@ -115,7 +114,6 @@ class GlobalWeekStartPlugin extends Plugin {
         const weekConfig = Object.assign(Object.assign({}, localeData._week || {}), { dow: desiredDow });
         const updater = this.originalUpdateLocale ?? moment.updateLocale.bind(moment);
         updater(targetLocale, { week: weekConfig });
-        console.info(`[Global Week Start] Enforced ${DAYS_OF_WEEK[desiredDow]} as week start for locale '${targetLocale}'.`);
     }
     restoreWeekStart() {
         const moment = window.moment;
@@ -127,7 +125,6 @@ class GlobalWeekStartPlugin extends Plugin {
         const weekConfig = Object.assign(Object.assign({}, localeData === null || localeData === void 0 ? void 0 : localeData._week), { dow: this.originalDow });
         const updater = this.originalUpdateLocale ?? moment.updateLocale.bind(moment);
         updater(locale, { week: weekConfig });
-        console.info(`[Global Week Start] Restored week start (${this.originalDow ?? "unknown"}) for locale '${locale}'.`);
     }
 }
 
@@ -138,7 +135,9 @@ class GlobalWeekStartSettingTab extends PluginSettingTab {
     }
     display() {
         this.containerEl.empty();
-        this.containerEl.createEl("h2", { text: "Global Week Start" });
+        new Setting(this.containerEl)
+            .setName("Global week start")
+            .setHeading();
         new Setting(this.containerEl)
             .setName("First day of the week")
             .setDesc("Applies globally to Moment.js; affects Periodic Notes, Calendar, and any plugin that reads locale week data.")
