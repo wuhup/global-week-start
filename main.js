@@ -136,9 +136,6 @@ class GlobalWeekStartSettingTab extends PluginSettingTab {
     display() {
         this.containerEl.empty();
         new Setting(this.containerEl)
-            .setName("Global week start")
-            .setHeading();
-        new Setting(this.containerEl)
             .setName("First day of the week")
             .setDesc("Applies globally to Moment.js; affects Periodic Notes, Calendar, and any plugin that reads locale week data.")
             .addDropdown((dropdown) => {
