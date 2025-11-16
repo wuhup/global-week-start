@@ -3,7 +3,7 @@
   "name": "Global Week Start",
   "version": "1.0.0",
   "minAppVersion": "0.15.0",
-  "description": "Choose the first day of the week and force Moment.js to respect it across the vault.",
+  "description": "Set first day of the week (e.g. Monday) globally for your vault.",
   "author": "Christopher Jones",
   "isDesktopOnly": false
 }
