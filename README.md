@@ -12,7 +12,7 @@ The plugin works entirely in-memory and does not modify any of your notes.
 
 ## Why this plugin? Why not use Calendar?
 
-This plugin was created in response to an issue I experienced, described in the following community thread:
+This plugin was created in response to an issue I experienced, that someone lese described in the following community thread:
 
 - [Calendar plugin settings dissapearing issue](https://forum.obsidian.md/t/calendar-plugin-settings-dissapearing-issue/93187)
 
